@@ -1,0 +1,188 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".ControllerActivity">
+
+    <Button
+        android:id="@+id/FrontButton"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="#ff202529"
+        android:onClick="mainActivityClickListener"
+        android:text="Front"
+        android:textColor="@android:color/background_light" />
+
+    <Button
+        android:id="@+id/StopButton"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/FrontButton"
+        android:layout_centerHorizontal="true"
+        android:background="#ff202529"
+        android:onClick="mainActivityClickListener"
+        android:text="Stop"
+        android:textColor="@android:color/background_light"
+        android:layout_marginTop="10dp" />
+
+    <Button
+        android:id="@+id/LeftButton"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/BackButton"
+        android:layout_toLeftOf="@+id/StopButton"
+        android:background="#ff202529"
+        android:onClick="mainActivityClickListener"
+        android:text="Left"
+        android:textColor="@android:color/background_light"
+        android:layout_marginRight="10dp" />
+
+    <Button
+        android:id="@+id/RightButton"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/StopButton"
+        android:layout_toRightOf="@+id/StopButton"
+        android:background="#ff202529"
+        android:onClick="mainActivityClickListener"
+        android:text="Right"
+        android:textColor="@android:color/background_light"
+        android:layout_marginLeft="10dp" />
+
+    <Button
+        android:id="@+id/BackButton"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/StopButton"
+        android:layout_centerHorizontal="true"
+        android:background="#ff202529"
+        android:onClick="mainActivityClickListener"
+        android:text="Back"
+        android:textColor="@android:color/background_light"
+        android:layout_marginTop="10dp" />
+
+    <Button
+        android:id="@+id/SendingButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/DeviceNameTextView"
+        android:layout_marginBottom="51dp"
+        android:layout_toLeftOf="@+id/MakeblockEditText"
+        android:layout_toStartOf="@+id/MakeblockEditText"
+        android:background="#ff202529"
+        android:onClick="send"
+        android:text="Send"
+
+        android:textColor="@android:color/background_light"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="5dp" />
+
+    <EditText
+        android:id="@+id/CommandEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:backgroundTint="@android:color/darker_gray"
+        android:hint="Command"
+        android:textColor="@android:color/darker_gray"
+        android:textColorHint="#ffcbcbcb" />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/JoystickButton"
+        android:background="#ff202529"
+        android:text="Contrôle par joystick"
+        android:textColor="@android:color/background_light"
+        android:onClick="mainActivityClickListener"
+        android:layout_alignTop="@+id/SendingButton"
+        android:layout_alignLeft="@+id/DisconnectingButton"
+        android:layout_alignStart="@+id/DisconnectingButton" />
+
+    <TextView
+        android:id="@+id/StatusTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/ConnectingButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/ConnectingButton"
+        android:text="Status :"
+        android:textColor="@android:color/darker_gray" />
+
+    <Button
+        android:id="@+id/ConnectingButton"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/StatusTextView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="#ff202529"
+        android:onClick="connect"
+        android:text="Connect"
+        android:textColor="@android:color/background_light" />
+
+    <Button
+        android:id="@+id/DisconnectingButton"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:background="#ff202529"
+        android:onClick="disconnect"
+        android:text="Disconnect"
+        android:textColor="@android:color/background_light"
+        android:layout_above="@+id/statusTextView"
+        android:layout_toRightOf="@+id/RightButton"
+        android:layout_toEndOf="@+id/RightButton" />
+
+    <TextView
+        android:id="@+id/DeviceNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ConnectingButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/MakeblockEditText"
+        android:text="Device name :"
+        android:textColor="@android:color/darker_gray" />
+
+    <EditText
+        android:id="@+id/MakeblockEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/DisconnectingButton"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_toEndOf="@+id/DeviceNameTextView"
+        android:layout_toRightOf="@+id/DeviceNameTextView"
+        android:backgroundTint="@android:color/darker_gray"
+        android:hint="Makeblock"
+        android:textColor="@android:color/darker_gray"
+        android:textColorHint="#ffcbcbcb" />
+
+    <TextView
+        android:id="@+id/statusTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ConnectingButton"
+        android:layout_toEndOf="@+id/StatusTextView"
+        android:layout_toRightOf="@+id/StatusTextView"
+        android:text="Disconnected"
+        android:textColor="@android:color/darker_gray"
+        android:textColorHint="@android:color/darker_gray" />
+
+</RelativeLayout>
